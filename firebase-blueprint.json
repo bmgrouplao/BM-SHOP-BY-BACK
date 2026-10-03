@@ -1,0 +1,50 @@
+{
+  "entities": {
+    "Product": {
+      "title": "Product",
+      "description": "Product document for BM SHOP footwear and apparel",
+      "type": "object",
+      "properties": {
+        "sku": { "type": "string" },
+        "nameEN": { "type": "string" },
+        "nameLA": { "type": "string" },
+        "descriptionEN": { "type": "string" },
+        "descriptionLA": { "type": "string" },
+        "price": { "type": "number" },
+        "category": { "type": "string" },
+        "gender": { "type": "string" },
+        "active": { "type": "boolean" }
+      },
+      "required": ["sku", "nameEN", "nameLA", "price", "category", "gender", "active"]
+    },
+    "Order": {
+      "title": "Order",
+      "description": "Order submitted by guest customer with BCEL One payment proof",
+      "type": "object",
+      "properties": {
+        "orderNumber": { "type": "string" },
+        "subtotal": { "type": "number" },
+        "deliveryFee": { "type": "number" },
+        "total": { "type": "number" },
+        "paymentStatus": { "type": "string" },
+        "orderStatus": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["orderNumber", "subtotal", "total", "paymentStatus", "orderStatus", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/products/{productId}": {
+      "schema": "Product",
+      "description": "Store products catalogue"
+    },
+    "/orders/{orderId}": {
+      "schema": "Order",
+      "description": "Store orders and payment verification statuses"
+    },
+    "/settings/store": {
+      "schema": { "$ref": "#/entities/Product" },
+      "description": "Global store configuration and BCEL One QR settings"
+    }
+  }
+}

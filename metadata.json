@@ -1,0 +1,6 @@
+{
+  "name": "BM SHOP — Shoes & Clothing",
+  "description": "Modern 2026 fashion-commerce store for Shoes & Clothing in Laos. Bilingual English & Lao, fast QR payment, and order tracking.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

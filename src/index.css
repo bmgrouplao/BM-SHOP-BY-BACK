@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Phetsarath';
+  src: local('Phetsarath OT'), local('Phetsarath'), local('PhetsarathOT'), url('https://fonts.gstatic.com/ea/notosanslao/v8/NotoSansLao-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Phetsarath';
+  src: local('Phetsarath OT Bold'), local('Phetsarath-Bold'), local('PhetsarathOT-Bold'), url('https://fonts.gstatic.com/ea/notosanslao/v8/NotoSansLao-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --font-sans: 'Phetsarath', 'Phetsarath OT', 'Noto Sans Lao', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    letter-spacing: -0.01em;
+    color: #1c1917;
+    background-color: #fafaf9;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Lao language readability enhancements using Phetsarath */
+  :lang(lo), .font-lao {
+    font-family: 'Phetsarath', 'Phetsarath OT', 'Noto Sans Lao', sans-serif;
+    line-height: 1.7;
+  }
+
+  /* Accessible focus ring */
+  *:focus-visible {
+    outline: 2px solid #1c1917;
+    outline-offset: 2px;
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f5f5f4;
+}
+::-webkit-scrollbar-thumb {
+  background: #d6d3d1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a29e;
+}
